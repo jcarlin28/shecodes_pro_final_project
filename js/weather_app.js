@@ -41,16 +41,22 @@ function showTemp(response) {
   let currentLocation = response.data.name;
   let tempElement = document.querySelector("#currentTemp");
   let currentHumidity = response.data.main.humidity;
-  let currentWind = response.data.wind.speed;
+  let currentWind = Math.round(response.data.wind.speed);
   let currentPrecip = response.data.clouds.all;
   let currentStatus = response.data.weather[0].description;
+  let weatherIcon = response.data.weather[0].icon;
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#windSpeed");
   let precipElement = document.querySelector("#precipitation");
   let weatherStatusElement = document.querySelector("#weatherStatus");
+  let weatherIconElement = document.querySelector("#weatherIcon");
   tempElement.innerHTML = `${currentTemp}`;
   humidityElement.innerHTML = `${currentHumidity}`;
   windSpeedElement.innerHTML = `${currentWind}`;
   precipElement.innerHTML = `${currentPrecip}`;
   weatherStatusElement.innerHTML = `${currentStatus}`;
+  weatherIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
 }
