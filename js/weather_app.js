@@ -60,3 +60,10 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
 }
+
+function showFarenheitTemp(event) {
+  alert("link clicked");
+}
+
+let farenheit = document.querySelector("#farenheit");
+farenheit.addEventListener("click", showFarenheitTemp);
