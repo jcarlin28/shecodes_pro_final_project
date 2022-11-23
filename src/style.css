@@ -68,9 +68,10 @@ form {
 
 .celciusFarenheit {
   text-align: left;
-  font-weight: bold;
   font-size: 25px;
   padding-top: 75px;
+  text-decoration: underline;
+  color: blue;
 }
 
 .weatherStatus {

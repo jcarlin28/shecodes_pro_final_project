@@ -37,7 +37,6 @@ let searchBar = document.querySelector("#search-bar");
 searchBar.addEventListener("submit", search);
 
 function showTemp(response) {
-  let currentTemp = Math.round(response.data.main.temp);
   let currentLocation = response.data.name;
   let tempElement = document.querySelector("#currentTemp");
   let currentHumidity = response.data.main.humidity;
@@ -45,12 +44,15 @@ function showTemp(response) {
   let currentPrecip = response.data.clouds.all;
   let currentStatus = response.data.weather[0].description;
   let weatherIcon = response.data.weather[0].icon;
+
+  realTemperature = Math.round(response.data.main.temp);
+
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#windSpeed");
   let precipElement = document.querySelector("#precipitation");
   let weatherStatusElement = document.querySelector("#weatherStatus");
   let weatherIconElement = document.querySelector("#weatherIcon");
-  tempElement.innerHTML = `${currentTemp}`;
+  tempElement.innerHTML = `${realTemperature}`;
   humidityElement.innerHTML = `${currentHumidity}`;
   windSpeedElement.innerHTML = `${currentWind}`;
   precipElement.innerHTML = `${currentPrecip}`;
@@ -61,9 +63,23 @@ function showTemp(response) {
   );
 }
 
+let realTemperature = null;
+
 function showFarenheitTemp(event) {
-  alert("link clicked");
+  event.preventDefault();
+  let farenheitTemp = Math.round((realTemperature * 9) / 5 + 32);
+  let tempElement = document.querySelector("#currentTemp");
+  tempElement.innerHTML = `${farenheitTemp}`;
 }
 
 let farenheit = document.querySelector("#farenheit");
 farenheit.addEventListener("click", showFarenheitTemp);
+
+function showCelciusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#currentTemp");
+  tempElement.innerHTML = Math.round(`${realTemperature}`);
+}
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", showCelciusTemp);
