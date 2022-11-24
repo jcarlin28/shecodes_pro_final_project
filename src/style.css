@@ -68,14 +68,23 @@ form {
 
 .celciusFarenheit {
   text-align: left;
-  font-size: 25px;
-  padding-top: 75px;
-  text-decoration: underline;
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+#celcius {
   color: blue;
+  text-decoration: underline;
+}
+
+#farenheit {
+  color: blue;
+  text-decoration: underline;
 }
 
 .weatherStatus {
   padding-left: 25px;
+  text-align: left;
 }
 
 .additionalWeather {
