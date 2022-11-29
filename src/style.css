@@ -5,7 +5,6 @@ body {
 
 h1 {
   text-align: left;
-  margin-top: 50px;
 }
 
 button.btn {
@@ -27,7 +26,7 @@ img {
 
 form {
   padding-left: 125px;
-  margin-top: 25px;
+  margin-top: 50px;
   color: #757a79;
 }
 
@@ -72,18 +71,19 @@ form {
   font-size: 20px;
 }
 
-#celcius {
+.activeC:hover {
+  cursor: default;
   color: blue;
-  text-decoration: underline;
 }
 
-#farenheit {
+.active:hover {
+  cursor: default;
   color: blue;
-  text-decoration: underline;
 }
 
 .weatherStatus {
   padding-left: 25px;
+  text-transform: capitalize;
 }
 
 .additionalWeather {
@@ -100,15 +100,24 @@ form {
   padding-bottom: 30px;
 }
 
-.inner {
-  border-right: 1px;
-  border-right-style: solid;
+.dailyForecast {
   height: 200px;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+img.dailyIcon {
+  margin: 0 auto;
 }
 
 .hourlyForecast {
   font-size: 20px;
   margin-left: 25px;
+}
+
+.col-2 {
+  height: 125px;
 }
 
 .col {
