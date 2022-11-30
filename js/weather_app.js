@@ -1,4 +1,9 @@
-debugger;
+function handlePosition(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+}
+
+navigator.geolocation.getCurrentPosition(handlePosition);
 
 let now = new Date();
 
@@ -22,6 +27,33 @@ let newHours = String(now.getHours()).padStart(2, "0");
 let newMinutes = String(now.getMinutes()).padStart(2, "0");
 
 timeDate.innerHTML = `${newDay} / ${newHours}:${newMinutes}`;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `<div class="col-2">
+            <div class="dailyForecast" id="forecast">Sunday
+              <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  class="dailyIcon"
+                  alt=""
+                  width="42"
+                /> 
+                <div class="daily-forecast-temp">
+          <span class="forecast-temp-max">18° | </span>
+          <span class="forecast-temp-min">10°</span>
+        </div>
+      </div> 
+          </div>
+        </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
 
 function search(event) {
   event.preventDefault();
@@ -52,6 +84,7 @@ function showTemp(response) {
   let precipElement = document.querySelector("#precipitation");
   let weatherStatusElement = document.querySelector("#weatherStatus");
   let weatherIconElement = document.querySelector("#weatherIcon");
+  let timeDateElement = document.querySelector("#date-time");
   tempElement.innerHTML = `${realTemperature}`;
   humidityElement.innerHTML = `${currentHumidity}`;
   windSpeedElement.innerHTML = `${currentWind}`;
