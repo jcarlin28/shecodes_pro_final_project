@@ -101,10 +101,11 @@ form {
 }
 
 .dailyForecast {
-  height: 200px;
+  height: 125px;
   text-align: center;
-  margin-top: 25px;
-  margin-left: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 img.dailyIcon {
