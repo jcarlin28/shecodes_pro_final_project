@@ -36,7 +36,7 @@
           <form id="search-bar">
             <div class="searchBar">
               <label for="exampleInputLocation" class="location-label"
-                >Location:</label
+                ><strong>Location:</strong></label
               ><br />
               <input
                 type="text"
@@ -51,7 +51,6 @@
         </div>
         <div class="col col-lg-2"></div>
       </div>
-      <br />
       <h1>CITY / LOCATION</h1>
       <div class="currentTempContainer">
         <div class="currentWeather">
@@ -68,7 +67,7 @@
           </div>
           <div class="col">
             <div class="celciusFarenheit">
-              <span id="celcius"> °C </span>| <span id="farenheit">°F</span>
+              <span class="activeC" id="celcius"><span>°C | <span class="activeF" id="farenheit">°F<span>
             </div>
           </div>
           <div class="col">
@@ -96,15 +95,7 @@
       <br />
       <div class="weeklyForecastContainer">
         <span class="weeklyForecast"> Weekly Forecast </span>
-        <div class="row">
-          <div class="col"><div class="inner">Sunday</div></div>
-          <div class="col"><div class="inner">Monday</div></div>
-          <div class="col"><div class="inner">Tuesday</div></div>
-          <div class="col"><div class="inner">Wednesday</div></div>
-          <div class="col"><div class="inner">Thursday</div></div>
-          <div class="col"><div class="inner">Friday</div></div>
-          <div class="col">Saturday</div>
-        </div>
+        <div class="dailyForecast" id="forecast">Day of the week</div>
       </div>
       <br />
       <br />
