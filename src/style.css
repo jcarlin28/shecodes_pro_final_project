@@ -64,10 +64,15 @@ form {
   text-align: center;
 }
 
-.celciusFarenheit {
+.units {
   text-align: left;
   padding-top: 50px;
   font-size: 20px;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
 }
 
 .activeC:hover {
@@ -75,7 +80,7 @@ form {
   color: blue;
 }
 
-.active:hover {
+.activeF:hover {
   cursor: default;
   color: blue;
 }
