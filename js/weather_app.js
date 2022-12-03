@@ -135,6 +135,5 @@ function showCelciusTemp(event) {
   let tempElement = document.querySelector("#currentTemp");
   tempElement.innerHTML = Math.round(`${realTemperature}`);
 }
-
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", showCelciusTemp);
